@@ -1,0 +1,41 @@
+lib/
+├── core/                  # Kode yang dapat digunakan di seluruh aplikasi
+│   ├── error/             # Penanganan error (exceptions, failures)
+│   │   ├── exceptions.dart
+│   │   └── failures.dart
+│   ├── network/           # Penanganan koneksi internet
+│   │   └── network_info.dart
+│   ├── utils/             # Berbagai utilitas (constants, extensions, dll.)
+│   │   ├── constants.dart
+│   │   └── ...
+│   └── usecases/          # Base class untuk use cases
+│       └── usecase.dart
+├── features/              # Fitur-fitur aplikasi
+│   └── user/              # Contoh fitur: User
+│       ├── data/          # Implementasi data layer
+│       │   ├── datasources/ # Sumber data (API, local storage)
+│       │   │   ├── user_remote_data_source.dart
+│       │   │   └── user_local_data_source.dart
+│       │   ├── models/     # Model data untuk data layer
+│       │   │   └── user_model.dart
+│       │   └── repositories/ # Implementasi repository
+│       │       └── user_repository_impl.dart
+│       ├── domain/        # Domain layer (business logic)
+│       │   ├── entities/   # Entitas (model data domain)
+│       │   │   └── user.dart
+│       │   ├── repositories/ # Interface repository
+│       │   │   └── user_repository.dart
+│       │   └── usecases/   # Use cases (interactors)
+│       │       ├── get_user.dart
+│       │       └── ...
+│       └── presentation/  # Presentation layer (UI, state management)
+│           ├── bloc/      # BLoC untuk state management
+│           │   ├── user_bloc.dart
+│           │   ├── user_event.dart
+│           │   └── user_state.dart
+│           ├── pages/     # Halaman-halaman UI
+│           │   └── user_page.dart
+│           └── widgets/   # Widget-widget yang digunakan di halaman
+│               └── user_card.dart
+├── main.dart              # Entry point aplikasi
+└── app.dart               # Konfigurasi aplikasi
