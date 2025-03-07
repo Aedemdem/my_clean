@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:my_clean/features/user/data/models/user_model.dart';
 
 import '../../domain/entities/user.dart';
 

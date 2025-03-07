@@ -12,7 +12,8 @@ class ServerFailure extends Failure {
   final String message;
   final String status;
 
-  ServerFailure({required this.statusCode, required this.message, required this.status});
+  const ServerFailure({required this.statusCode, required this.message, required this.status});
 }
 
 class NetworkFailure extends Failure {}
+class CacheFailure extends Failure {} //todo: no usage

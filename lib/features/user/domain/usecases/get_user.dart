@@ -5,7 +5,6 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/user.dart';
 import '../repositories/user_repository.dart';
 
-
 class GetUserList implements UseCase<List<User>, Params> {
   final UserRepository repository;
 

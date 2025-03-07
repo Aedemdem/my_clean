@@ -19,14 +19,13 @@ class UserRemoteDataSourceImpl implements UserRemoteDataSource {
   Future<UserListModel> getUserList(int page) async {
     try {
       final response = await client.get(
-        '${Constants.baseUrl}${Constants.userListEndpoint}?page=$page',
+        '${Constants.baseUrl}${Constants.userListEndpoint}?page=$page&per_page=10',
         options: Options(
           headers: {
             'content-Type': 'application/json',
           },
         ),
       );
-      print('RESPOSNE  ${response.data}');
       if (response.statusCode == 200) {
         final responseData = response.data;
         if (responseData['data'] != null) {
@@ -62,7 +61,6 @@ class UserRemoteDataSourceImpl implements UserRemoteDataSource {
           },
         ),
       );
-      print('RESPOSNE  ${response.data}');
       if (response.statusCode == 200) {
         return UserModel.fromJson(response.data);
       } else if (response.statusCode == 404) {

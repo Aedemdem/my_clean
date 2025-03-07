@@ -7,5 +7,4 @@ class Constants {
   // User Endpoints
   static const String userListEndpoint = '/users';
   static const String userDetailEndpoint = '/users/';
-  // static const String userDetailEndpoint = '/users/{id}'; // Contoh jika ada endpoint detail user
 }

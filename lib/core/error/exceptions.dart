@@ -4,4 +4,5 @@ class ServerException implements Exception {
   final String status;
 
   ServerException({required this.statusCode, required this.message, required this.status});
+
 }

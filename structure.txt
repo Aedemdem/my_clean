@@ -39,3 +39,6 @@ lib/
 │               └── user_card.dart
 ├── main.dart              # Entry point aplikasi
 └── app.dart               # Konfigurasi aplikasi
+
+// untuk mengingatkan gemini pada konteks aplikasi yang sedang dibuat
+Untuk menjaga konteks percakapan kita saya akan ingatkan kembali bahwa proyek aplikasi ini adalah aplikasi flutter yang menggunakan clean architecture dan memegang prinsip best practice. Saat ini saya menggunakan flutter 3.27.4 dan Dart 3.6.2. Untuk progress aplikasi sudah sampai ke pembuatan detail user. Kamu bisa melihat kembali aplikasi yang sudah dibuat pada link berikut https://github.com/Aedemdem/ my_ clean

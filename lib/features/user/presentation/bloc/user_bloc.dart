@@ -10,7 +10,13 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   UserBloc({required this.getUserList}) : super(UserInitial()) {
     on<GetUserListEvent>((event, emit) async {
-      emit(UserLoading());
+      if (event.page == 1) {
+        emit(UserInitial());
+      }
+      if (state is! UserListLoaded) {
+        emit(UserLoading());
+      }
+      // emit(UserLoading());
       final failureOrUserList = await getUserList(Params(page: event.page));
       failureOrUserList.fold(
             (failure) => emit(UserError(message: _mapFailureToMessage(failure))),
@@ -21,14 +27,17 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {
-      case ServerFailure:
+      case const (ServerFailure):
         final serverFailure = failure as ServerFailure;
         if (serverFailure.status == 'error') {
           if (serverFailure.statusCode == 404) {
             return 'Data tidak ditemukan';
-          } else if (serverFailure.statusCode == 500) {
+          }
+          else if (serverFailure.statusCode == 500) {
             return 'Terjadi kesalahan di server. Silakan coba lagi nanti.';
-          } else {
+          }
+          else
+          {
             return serverFailure.message;
           }
         } else {
